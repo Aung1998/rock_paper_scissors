@@ -4,15 +4,12 @@ function computerPlay(){
 }
 
 function playRound(playerSelection, computerSelection) {
-    if(playerSelection.toLowerCase() == computerSelection.toLowerCase()){
+    if(playerSelection == computerSelection){
         return "draw";
     }
-    else if ((playerSelection.toLowerCase()=="rock" && 
-    computerSelection.toLowerCase() == "scissors") || 
-    (playerSelection.toLowerCase()=="scissors" && 
-    computerSelection.toLowerCase() == "paper") ||
-    (playerSelection.toLowerCase()=="paper" && 
-    computerSelection.toLowerCase() == "rock")){
+    else if ((playerSelection=="rock" &&  computerSelection == "scissors") || 
+            (playerSelection=="scissors" && computerSelection == "paper") ||
+            (playerSelection=="paper" && computerSelection == "rock")){
         return "human";
     }
     else{
@@ -25,7 +22,7 @@ function playGame(){
     let computer_points = 0;
     while (human_points < 5 && computer_points < 5){
         let human = prompt("Enter your sign");
-        result = playRound(human, computerPlay());
+        result = playRound(human.toLowerCase(), computerPlay());
         if(result == "human"){
             console.log("Human win the round!");
             human_points += 1;
