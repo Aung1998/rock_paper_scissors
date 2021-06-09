@@ -10,7 +10,7 @@ const scissors = document.getElementById("scissors");
 const human_result = document.getElementById("human_point")
 const computer_result = document.getElementById("computer_point")
 
-result = document.createElement("div");
+const final_result = document.getElementById("final-result");
 
 function computerPlay() {
   return HANDS[Math.floor(Math.random() * HANDS.length)];
@@ -69,9 +69,9 @@ function btn_disabled(bool){
 function decidewin() {
   if (human_points == 5) {
     btn_disabled(true);
-    result.textContent = "Human Win The Game!"
+    final_result.textContent = "Human Win The Game!"
   } else if (computer_points == 5) {
     btn_disabled(true);
-    result.textContent = "Computer Win The Game!"
+    final_result.textContent = "Computer Win The Game!"
   }
 }
