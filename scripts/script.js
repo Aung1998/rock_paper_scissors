@@ -52,6 +52,7 @@ function reset() {
   human_points = 0;
   computer_points = 0;
   updateResult();
+  final_result.textContent = "";
   btn_disabled(false);
 }
 

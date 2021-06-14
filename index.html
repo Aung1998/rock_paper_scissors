@@ -6,6 +6,10 @@
 </head>
 
 <body class="container">
+    <div id="score" class="score_div">
+        <div id="human_point">Human Points: 0</div>
+        <div id="computer_point">Computer Points: 0</div>
+    </div>
     <div class="choice_bar">
         <button id="rock" class="choice_btn" value="rock" onClick="playGame(this.value)"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="121.000000pt" height="121.000000pt" viewBox="0 0 536.000000 628.000000"
@@ -177,10 +181,6 @@
     </div>
     <div class="reset_div">
         <button id="reser" class="reset_btn" onclick="reset()">Reset</button>
-    </div>
-    <div id="score" class="score_div">
-        <div id="human_point">Human Points: 0</div>
-        <div id="computer_point">Computer Points: 0</div>
     </div>
     <div id="final-result" >
     </div>
