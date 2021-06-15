@@ -3,6 +3,8 @@ const HANDS = ["rock", "paper", "scissors"];
 let human_points = 0;
 let computer_points = 0;
 
+const btn = document.getElementsByClassName("choice_btn");
+
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
@@ -75,4 +77,15 @@ function decidewin() {
     btn_disabled(true);
     final_result.textContent = "Computer Win The Game!"
   }
+}
+for(let i = 0; i<=btn.length; i++){
+  btn[i].addEventListener('click', function(e){
+    this.classList.toggle('btn_clicked');
+  })
+  btn[i].addEventListener("transitionend", removeTransition);    
+}
+
+function removeTransition(e){
+  if(e.propertyName != 'transform') return;
+  this.classList.remove('btn_clicked');
 }

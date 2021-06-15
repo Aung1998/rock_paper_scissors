@@ -17,5 +17,12 @@
     margin:15px;
     background-color:white;
     border: 1px black solid;
-    
+    transition: all 0.6s ease;
+    padding: 15px;
+}
+
+.btn_clicked{
+    transform: scale(1.1);
+    border-color: #00a3d4;
+    box-shadow: 0 0 1rem #00a3d4;
 }
