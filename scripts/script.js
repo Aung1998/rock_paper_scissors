@@ -40,19 +40,17 @@ function playRound(playerSelection, computerSelection) {
 function playGame(value) {
   let human = value;
   let computer = computerPlay();
-  computerAnnimate(computer);
   result = playRound(human.toLowerCase(), computer);
   if (result == "human") {
     winner.textContent = "Human Win the round!"
     human_points += 1;
-    console.log("Human Points: " + human_points);
   } else if (result == "computer") {
     winner.textContent = "Computer Win the round!"
     computer_points += 1;
-    console.log("Computer Points: " + computer_points);
   } else {
     winner.textContent = "It's a draw!"
   }
+  computerAnnimate(computer);
   updateResult();
   decidewin();
 }

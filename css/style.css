@@ -34,7 +34,7 @@
 }
 
 .comp_clicked{
-    transform: scale(1.0);
+    transform: scale(1.1);
     border-color: #d42000;
     box-shadow: 0 0 1rem #d42000;
 }
