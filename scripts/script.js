@@ -11,8 +11,7 @@ const scissors = document.getElementById("scissors");
 
 const human_result = document.getElementById("human_point")
 const computer_result = document.getElementById("computer_point")
-
-const final_result = document.getElementById("final-result");
+const winner  = document.getElementById("winner");
 
 function computerPlay() {
   return HANDS[Math.floor(Math.random() * HANDS.length)];
@@ -36,15 +35,15 @@ function playGame(value) {
   let human = value;
   result = playRound(human.toLowerCase(), computerPlay());
   if (result == "human") {
-    console.log("Human win the round!");
+    winner.textContent = "Human Win the round!"
     human_points += 1;
     console.log("Human Points: " + human_points);
   } else if (result == "computer") {
-    console.log("Computer win the round!");
+    winner.textContent = "Computer Win the round!"
     computer_points += 1;
     console.log("Computer Points: " + computer_points);
   } else {
-    console.log("It's a Draw!");
+    winner.textContent = "It's a draw!"
   }
   updateResult();
   decidewin();
@@ -54,7 +53,7 @@ function reset() {
   human_points = 0;
   computer_points = 0;
   updateResult();
-  final_result.textContent = "";
+  winner.textContent = "";
   btn_disabled(false);
 }
 
@@ -72,12 +71,13 @@ function btn_disabled(bool){
 function decidewin() {
   if (human_points == 5) {
     btn_disabled(true);
-    final_result.textContent = "Human Win The Game!"
+    winner.textContent = "Human Win The Game!"
   } else if (computer_points == 5) {
     btn_disabled(true);
-    final_result.textContent = "Computer Win The Game!"
+    winner.textContent = "Computer Win The Game!"
   }
 }
+
 for(let i = 0; i<=btn.length; i++){
   btn[i].addEventListener('click', function(e){
     this.classList.toggle('btn_clicked');
@@ -89,3 +89,4 @@ function removeTransition(e){
   if(e.propertyName != 'transform') return;
   this.classList.remove('btn_clicked');
 }
+
