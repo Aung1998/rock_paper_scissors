@@ -33,6 +33,12 @@
     box-shadow: 0 0 1rem #00a3d4;
 }
 
+.comp_clicked{
+    transform: scale(1.0);
+    border-color: #d42000;
+    box-shadow: 0 0 1rem #d42000;
+}
+
 .reset_div{
     display:flex;
     flex-direction:column;

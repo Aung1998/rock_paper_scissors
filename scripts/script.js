@@ -17,6 +17,12 @@ function computerPlay() {
   return HANDS[Math.floor(Math.random() * HANDS.length)];
 }
 
+function computerAnnimate(btn_id){
+  const comp_btn = document.getElementById(btn_id);
+  comp_btn.classList.toggle('comp_clicked');
+  comp_btn.addEventListener("transitionend", removeTransition);
+}
+
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
     return "draw";
@@ -33,7 +39,9 @@ function playRound(playerSelection, computerSelection) {
 
 function playGame(value) {
   let human = value;
-  result = playRound(human.toLowerCase(), computerPlay());
+  let computer = computerPlay();
+  computerAnnimate(computer);
+  result = playRound(human.toLowerCase(), computer);
   if (result == "human") {
     winner.textContent = "Human Win the round!"
     human_points += 1;
@@ -88,5 +96,6 @@ for(let i = 0; i<=btn.length; i++){
 function removeTransition(e){
   if(e.propertyName != 'transform') return;
   this.classList.remove('btn_clicked');
+  this.classList.remove('comp_clicked');
 }
 
